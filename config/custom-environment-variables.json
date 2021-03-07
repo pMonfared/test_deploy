@@ -1,12 +1,6 @@
 {
   "port": "PORT",
-  "database": {
-    "host": "DB_PG_HOST",
-    "user": "DB_PG_USER",
-    "password": "DB_PG_PASS",
-    "database": "DB_PG_NAME",
-    "port":"DB_PG_PORT"
-  },
+  "dbPgConnString": "DATABASE_PG_URL",
   "email": {
     "host": "",
     "port": "",

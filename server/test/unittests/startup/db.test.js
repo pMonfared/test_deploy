@@ -5,7 +5,7 @@ describe("Db class generate Pool postgresql pg its",()=>{
         try {
             let db = new Db();
         } catch (e) {
-            expect(e.message).toBe("Cannot read property 'host' of undefined");
+            expect(e.message).toBe("Cannot read property 'connectionString' of undefined");
         }
         
     })
@@ -16,53 +16,14 @@ describe("Db class generate Pool postgresql pg its",()=>{
         try {
             let db = new Db(configDb);
         } catch (e) {
-            expect(e.message).toBe(`host must be set to Db constructor`);
+            expect(e.message).toBe(`connectionString must be set to Db constructor`);
         }
         
     })
 
-    it("should get Error 'user' when generate instance of Db class",()=>{
-        let configDb = {host:'it'}
-        
-        try {
-            let db = new Db(configDb);
-        } catch (e) {
-            expect(e.message).toBe(`user must be set to Db constructor`);
-        }
-    })
-
-    it("should get Error 'password' when generate instance of Db class",()=>{
-        let configDb = {host:'it',user:'it'}
-        
-        try {
-            let db = new Db(configDb);
-        } catch (e) {
-            expect(e.message).toBe(`password must be set to Db constructor`);
-        }
-    })
-
-    it("should get Error 'database' when generate instance of Db class",()=>{
-        let configDb = {host:'it',user:'it',password:'it'}
-        
-        try {
-            let db = new Db(configDb);
-        } catch (e) {
-            expect(e.message).toBe(`database must be set to Db constructor`);
-        }
-    })
-
-    it("should get Error 'port' when generate instance of Db class",()=>{
-        let configDb = {host:'it',user:'it',password:'it',database:'it'}
-        
-        try {
-            let db = new Db(configDb);
-        } catch (e) {
-            expect(e.message).toBe(`port must be set to Db constructor`);
-        }
-    })
 
     it("should get a new instance of Db class",()=>{
-        let configDb = {host:'it',user:'it',password:'it',database:'it',port:'it'}
+        let configDb = {connectionString:'test'}
         
         try {
             let db = new Db(configDb);

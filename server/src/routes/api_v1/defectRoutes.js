@@ -7,12 +7,12 @@ import config from 'config'
 //get config of current ENV mode like :dev,staging,production
 import AppConfig from "../../startup/appConfig.js";
 
-const appConfigDatabase = new AppConfig(config).getConfig("database");
+const appConfigDbPgConnString = new AppConfig(config).getConfig("dbPgConnString");
 
 //generate new pool of postgresql db connection by pg npm package
 import Db from "../../startup/db.js"
 
-const db = new Db(appConfigDatabase)
+const db = new Db({connectionString:appConfigDbPgConnString})
 
 //Db manager Class BEGIN
 import DBManager from "../../domain/data/dBManager.js"
