@@ -34,6 +34,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "cross-env": "^7.0.3",
     "chai": "^4.3.0",
     "chai-http": "^4.3.0",
@@ -74,6 +75,7 @@
     ],
     "testEnvironment": "node"
   },
+  "type": "module",
   "scripts": {
     "start": "npm run prod",
     "build": "npm-run-all clean transpile",
@@ -81,11 +83,12 @@
     "dev": "NODE_ENV=development npm-run-all build server",
     "prod": "NODE_ENV=production npm-run-all build server",
     "start-win": "npm run prod-win",
-    "dev-win": "cross-env NODE_ENV=development npm-run-all build server",
-    "prod-win": "cross-env NODE_ENV=production npm-run-all build server",
+    "dev-win": "cross-env NODE_ENV=development dotenv/config npm-run-all build server",
+    "prod-win": "cross-env NODE_ENV=production dotenv/config npm-run-all build server",
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
-    "watch:dev": "nodemon --inspect=5000 --config nodemon.json server/bin/www.js",
+    "watch:dev-win": "cross-env NODE_ENV=development nodemon --config nodemon.json -r dotenv/config server/bin/www.js",
+    "watch:dev": "NODE_ENV=development nodemon --config nodemon.json -r dotenv/config server/bin/www.js",
     "test": "jest --setupFiles nodemon --config nodemon.json --watchAll --runInBand --detectOpenHandles --verbose ./server/test --coverage",
     "test-unit": "jest --setupFiles nodemon --config nodemon.json --watchAll --runInBand --detectOpenHandles --verbose ./server/test/unittests --coverage",
     "test-integration":"jest --verbose ./server/test/integrations --watchAll --runInBand  --detectOpenHandles --coverage"

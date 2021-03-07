@@ -1,7 +1,6 @@
 {
   "port": "PORT",
   "database": {
-    "multipleStatements": true,
     "host": "DB_PG_HOST",
     "user": "DB_PG_USER",
     "password": "DB_PG_PASS",
