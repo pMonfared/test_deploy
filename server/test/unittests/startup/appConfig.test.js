@@ -67,7 +67,7 @@ describe("AppConfig class generate tests",()=>{
             expect(devConfig).toStrictEqual(tstCf);
         } catch (e) {
             expect(e).toBeDefined();
-            expect(e.message).toBe('FETAL ERROR: config is not defined as mode:'+ mode);
+            expect(e.message).toBe('FETAL ERROR: config value is not defined as key-name:'+ mode);
         }
     })
 })

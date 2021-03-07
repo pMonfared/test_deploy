@@ -75,7 +75,6 @@
     ],
     "testEnvironment": "node"
   },
-  "type": "module",
   "scripts": {
     "start": "npm run prod",
     "build": "npm-run-all clean transpile",
