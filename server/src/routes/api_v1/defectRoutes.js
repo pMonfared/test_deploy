@@ -31,7 +31,7 @@ import DefectRoutesValidation from "../validations/defectRoutesValidation.js";
 //Routes Validation Middlewares END
 
 //PresentationLayer Services BEGIN
-import DefectServices from "../../presentation/services/DefectServices.js"
+import DefectServices from "../../presentation/services/defectServices.js"
 //PresentationLayer Services END
 
 //Controllers BEGIN
