@@ -1,0 +1,93 @@
+{
+  "name": "nodejs-challenge-senior-backend",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Pooria Monfarred",
+    "url": "https://github.com/pMonfared"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@hapi/joi": "^17.1.1",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "config": "^3.3.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-handlebars": "^3.0.0",
+    "express-validator": "^5.3.0",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "morgan": "~1.9.1",
+    "npm-run-all": "^4.1.5",
+    "pg": "^8.3.3",
+    "pg-hstore": "^2.3.3",
+    "promise": "^7.1.1",
+    "request": "^2.88.2",
+    "rimraf": "^3.0.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "chai": "^4.3.0",
+    "chai-http": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "mocha": "^8.3.0",
+    "nodemon": "^2.0.7",
+    "sinon": "^9.2.4",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.3"
+  },
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "server/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "jest": {
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
+    ],
+    "collectCoverageFrom": [
+      "server/src/**/*.{js}"
+    ],
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "start": "npm run prod",
+    "build": "npm-run-all clean transpile",
+    "server": "node ./dist-server/bin/www",
+    "dev": "NODE_ENV=development npm-run-all build server",
+    "prod": "NODE_ENV=production npm-run-all build server",
+    "start-win": "npm run prod-win",
+    "dev-win": "cross-env NODE_ENV=development npm-run-all build server",
+    "prod-win": "cross-env NODE_ENV=production npm-run-all build server",
+    "transpile": "babel ./server --out-dir dist-server",
+    "clean": "rimraf dist-server",
+    "watch:dev": "nodemon --inspect=5000 --config nodemon.json server/bin/www.js",
+    "test": "jest --setupFiles nodemon --config nodemon.json --watchAll --runInBand --detectOpenHandles --verbose ./server/test --coverage",
+    "test-unit": "jest --setupFiles nodemon --config nodemon.json --watchAll --runInBand --detectOpenHandles --verbose ./server/test/unittests --coverage",
+    "test-integration":"jest --verbose ./server/test/integrations --watchAll --runInBand  --detectOpenHandles --coverage"
+  }
+}

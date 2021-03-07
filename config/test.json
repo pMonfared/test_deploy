@@ -1,0 +1,23 @@
+﻿{
+  "test": {
+    "name": "Project Name - Test Mode",
+    "port": 5004,
+    "mode": "development",
+    "protocol": "http",
+    "serverUrl": "localhost",
+    "serverUrlWebUrlLink": "localhost:5004/",
+    "database": {
+      "host": "localhost",
+      "user": "postgres",
+      "password": "123456",
+      "database": "NodeJsTest1",
+      "port":"5433"
+    },
+    "email": {
+      "host": "",
+      "port": "",
+      "username": "",
+      "password": ""
+    }
+  }
+}

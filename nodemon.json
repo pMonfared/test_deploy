@@ -1,0 +1,7 @@
+﻿{
+  "ignore": [
+    "node_modules/*",
+    ".tmp/*",
+    ".git/*"
+  ]
+}

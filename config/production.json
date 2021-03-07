@@ -1,0 +1,24 @@
+﻿{
+  "production": {
+    "name": "Project Name - Production Mode",
+    "port": 5001,
+    "mode": "production",
+    "protocol": "http",
+    "serverUrl": "",
+    "serverUrlWebUrlLink": "",
+    "database": {
+      "multipleStatements": true,
+      "host": "localhost",
+      "user": "postgres",
+      "password": "123456",
+      "database": "NodeJsChallangeNum1",
+      "port":"5433"
+    },
+    "email": {
+      "host": "",
+      "port": "",
+      "username": "",
+      "password": ""
+    }
+  }
+}

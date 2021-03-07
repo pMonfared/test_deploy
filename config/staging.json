@@ -1,0 +1,23 @@
+﻿{
+  "staging": {
+    "name": "Project Name - Staging Mode",
+    "port": 5002,
+    "mode": "staging",
+    "protocol": "http",
+    "serverUrl": "",
+    "serverUrlWebUrlLink": "",
+    "database": {
+      "host": "localhost",
+      "user": "postgres",
+      "password": "123456",
+      "database": "NodeJsChallangeNum1",
+      "port":"5433"
+    },
+    "email": {
+      "host": "",
+      "port": "",
+      "username": "",
+      "password": ""
+    }
+  }
+}
