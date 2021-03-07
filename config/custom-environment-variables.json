@@ -1,0 +1,17 @@
+{
+  "port": "PORT",
+  "database": {
+    "multipleStatements": true,
+    "host": "DB_PG_HOST",
+    "user": "DB_PG_USER",
+    "password": "DB_PG_PASS",
+    "database": "DB_PG_NAME",
+    "port":"DB_PG_PORT"
+  },
+  "email": {
+    "host": "",
+    "port": "",
+    "username": "",
+    "password": ""
+  }      
+}
