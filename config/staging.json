@@ -10,7 +10,7 @@
       "host": "localhost",
       "user": "postgres",
       "password": "123456",
-      "database": "NodeJsChallangeNum1",
+      "database": "dbStaging",
       "port":"5433"
     },
     "email": {
