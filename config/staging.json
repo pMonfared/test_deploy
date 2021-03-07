@@ -1,23 +1,6 @@
 ﻿{
-  "staging": {
-    "name": "Project Name - Staging Mode",
-    "port": 5002,
-    "mode": "staging",
-    "protocol": "http",
-    "serverUrl": "",
-    "serverUrlWebUrlLink": "",
-    "database": {
-      "host": "localhost",
-      "user": "postgres",
-      "password": "123456",
-      "database": "dbStaging",
-      "port":"5433"
-    },
-    "email": {
-      "host": "",
-      "port": "",
-      "username": "",
-      "password": ""
-    }
-  }
+  "name": "Project Name - Staging Mode",
+  "protocol": "http",
+  "serverUrl": "",
+  "serverUrlWebUrlLink": ""
 }

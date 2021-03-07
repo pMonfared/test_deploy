@@ -2,19 +2,17 @@ import express from "express";
 
 import config from 'config'
 
-// if NODE_ENV value not define then dev value will be assign 
-const mode = process.env.NODE_ENV || 'development';
 
 //#region wire up db,repositories,services,controllers,routesValidations
 //get config of current ENV mode like :dev,staging,production
 import AppConfig from "../../startup/appConfig.js";
 
-const appConfig = new AppConfig(config,mode).getConfig();
+const appConfigDatabase = new AppConfig(config).getConfig("database");
 
 //generate new pool of postgresql db connection by pg npm package
 import Db from "../../startup/db.js"
 
-const db = new Db(appConfig.database)
+const db = new Db(appConfigDatabase)
 
 //Db manager Class BEGIN
 import DBManager from "../../domain/data/dBManager.js"

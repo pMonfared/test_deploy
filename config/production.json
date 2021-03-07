@@ -1,9 +1,6 @@
 ﻿{
-  "production": {
-    "name": "Project Name - Production Mode",
-    "mode": "production",
-    "protocol": "http",
-    "serverUrl": "",
-    "serverUrlWebUrlLink": ""
-  }
+  "name": "Project Name - Production Mode",
+  "protocol": "http",
+  "serverUrl": "",
+  "serverUrlWebUrlLink": ""
 }
