@@ -4,11 +4,7 @@
  * Module dependencies.
  */
  import 'babel-polyfill';
- // Setup environment
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
-// if NODE_ENV value not define then dev value will be assign 
-const mode = process.env.NODE_ENV;
 
 import config from 'config'
 
@@ -24,21 +20,17 @@ import colors from "colors";
 // Create server
 const app = express();
 
-const appConfig = new AppConfig(config,mode).getConfig();
+const appConfigPort = new AppConfig(config).getConfig("port");
 
 
 // Start listening
-<<<<<<< HEAD
-export default app.listen(process.env.PORT ||appConfig.port, function () {
-=======
-export default app.listen(process.env.PORT || appConfig.port, function () {
->>>>>>> e61ffcd4e6b16688a90a0c7db84c2fde4cfa89ff
+export default app.listen(appConfigPort, function () {
     console.log(
         colors.bold(
             "Listening with " +
             process.env.NODE_ENV +
             " config on port " +
-            process.env.PORT || appConfig.port
+            appConfigPort
         )
     );
 });

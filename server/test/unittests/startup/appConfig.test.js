@@ -12,18 +12,9 @@ describe("AppConfig class generate tests",()=>{
 
     })
 
-    it("should return Error 'mode' when generate an instance of AppConfig class",()=>{
-        try {
-            let appConfig = new AppConfig('test-configuration');
-        } catch (e) {
-            expect(e).toBeDefined();
-            expect(e.message).toBe('FETAL ERROR: mode is not defined for AppConfig class.');
-        }
-    })
-
     it("should return an instance of AppConfig class",()=>{
         try {
-            let appConfig = new AppConfig('test-configuration','test-mode');
+            let appConfig = new AppConfig('test-configuration');
             expect(appConfig).toBeDefined();
         } catch (e) {
             expect(e).toBeDefined();
@@ -35,7 +26,7 @@ describe("AppConfig class generate tests",()=>{
         let configuration = {
             get(mode){
                 return {
-                    mode,
+                    mode:{},
                     database: {
                         host:'test-host'
                     }
@@ -44,11 +35,11 @@ describe("AppConfig class generate tests",()=>{
         }
         
         try {
-            let appConfig = new AppConfig(configuration,'development');
+            let appConfig = new AppConfig(configuration);
             expect(appConfig).toBeDefined();
 
             let tstCf = configuration.get('development');
-            let devConfig = appConfig.getConfig();
+            let devConfig = appConfig.getConfig('development');
             expect(devConfig).toBeDefined();
             expect(devConfig).toStrictEqual(tstCf);
         } catch (e) {
@@ -67,11 +58,11 @@ describe("AppConfig class generate tests",()=>{
         }
         
         try {
-            let appConfig = new AppConfig(configuration,mode);
+            let appConfig = new AppConfig(configuration);
             expect(appConfig).toBeDefined();
 
             let tstCf = configuration.get(mode);
-            let devConfig = appConfig.getConfig();
+            let devConfig = appConfig.getConfig(mode);
             expect(devConfig).toBeDefined();
             expect(devConfig).toStrictEqual(tstCf);
         } catch (e) {

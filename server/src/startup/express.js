@@ -1,5 +1,3 @@
-// if NODE_ENV value not define then dev value will be assign 
-const mode = process.env.NODE_ENV || 'development';
 
 // Dependencies of App config (like: port,DbConnectionString,DbName,...)
 import AppConfig from "./appConfig.js"
@@ -17,7 +15,7 @@ import config from 'config'
 import error from "../middlewares/errorResponseHandler.js";
 
 const initApp = function () {
-  const appConfig = new AppConfig(config,mode).getConfig();
+  const appConfigPort = new AppConfig(config).getConfig("port");
   
   // Init express config
   let app = express();
@@ -28,7 +26,7 @@ const initApp = function () {
   }));
 
   // set app port from Config file
-  app.set("port", appConfig.PORT);
+  app.set("port", appConfigPort);
 
   app.use(
     bodyParser.urlencoded({
