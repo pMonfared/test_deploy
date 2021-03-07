@@ -28,7 +28,11 @@ const appConfig = new AppConfig(config,mode).getConfig();
 
 
 // Start listening
+<<<<<<< HEAD
 export default app.listen(process.env.PORT ||appConfig.port, function () {
+=======
+export default app.listen(process.env.PORT || appConfig.port, function () {
+>>>>>>> e61ffcd4e6b16688a90a0c7db84c2fde4cfa89ff
     console.log(
         colors.bold(
             "Listening with " +
