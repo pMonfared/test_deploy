@@ -25,7 +25,7 @@ class DefectController {
             //to exceptionHandler middleware by next() to manage as central error handler
             //else exception is a unhandled,should generate another custom error (APIError(unhandledError,...)) to log real error 
             //to logfile and only show user-friendly message in response
-            next(error.isOperational ? error : new APIError(error,"postDefect-ct","Cannot Add Defect Info"));
+            next(error.isOperational ? error : new APIError(error,"getDefect-ct","Cannot Get All Defect"));
         }
     }
   
