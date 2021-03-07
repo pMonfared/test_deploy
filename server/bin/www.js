@@ -28,13 +28,13 @@ const appConfig = new AppConfig(config,mode).getConfig();
 
 
 // Start listening
-export default app.listen(appConfig.port, function () {
+export default app.listen(process.env.PORT ||appConfig.port, function () {
     console.log(
         colors.bold(
             "Listening with " +
             process.env.NODE_ENV +
             " config on port " +
-            appConfig.port
+            process.env.PORT || appConfig.port
         )
     );
 });
