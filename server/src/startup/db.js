@@ -4,27 +4,19 @@ import pkg from 'pg';
 const {Pool} = pkg;
 
 class Db{
-    constructor({connectionString,sslEnabled})
+    constructor({connectionString})
     {
         if(!connectionString)
           throw new Error(`connectionString must be set to Db constructor`);
         
         this.connectionString = connectionString;
-        this.sslEnabled = sslEnabled;
     }
     //Generate Pool of PG package for connect to db
     generatePool(){
-        if(this.sslEnabled === true){
-            return new Pool({
-                connectionString: this.connectionString,
-                ssl: this.sslEnabled
-            });
-        }
-
+       const connectionString = this.connectionString;
         return new Pool({
-            connectionString: this.connectionString
+            connectionString
         });
-        
     }
     //health check of connection to postgresql Server
     async healthCheck(){

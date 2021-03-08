@@ -8,13 +8,11 @@ import config from 'config'
 import AppConfig from "../../startup/appConfig.js";
 
 const appConfigDbPgConnString = new AppConfig(config).getConfig("dbPgConnString");
-const appConfigDbPgSslEnabled = new AppConfig(config).getConfig("dbPgSslEnabled");
-
 
 //generate new pool of postgresql db connection by pg npm package
 import Db from "../../startup/db.js"
 
-const db = new Db({connectionString:appConfigDbPgConnString,sslEnabled:appConfigDbPgSslEnabled})
+const db = new Db({connectionString:appConfigDbPgConnString})
 
 //Db manager Class BEGIN
 import DBManager from "../../domain/data/dBManager.js"

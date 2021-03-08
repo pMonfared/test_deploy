@@ -1,7 +1,6 @@
 {
   "port": "PORT",
   "dbPgConnString": "DATABASE_PG_URL",
-  "dbPgSslEnabled": "DATABASE_PG_ENABLED",
   "email": {
     "host": "",
     "port": "",
